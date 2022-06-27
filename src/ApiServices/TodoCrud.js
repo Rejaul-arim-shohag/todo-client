@@ -4,7 +4,7 @@ const axios = require('axios')
 let token = JSON.parse(localStorage.getItem('token'));
 //create Todo
 export function TodoCreate(Title, Detail, UserId){
-    const url="http://localhost:5000/api/v1/createTodo";
+    const url="https://rejaul-karim-todo.herokuapp.com/api/v1/createTodo";
     const postBody={
         Title:Title,
         Detail:Detail,
@@ -27,7 +27,7 @@ export function TodoCreate(Title, Detail, UserId){
 }  
 
 export function ReadTodoByUserId(){
-    const url="http://localhost:5000/api/v1/ReadTodoByUserId";
+    const url="https://rejaul-karim-todo.herokuapp.com/api/v1/ReadTodoByUserId";
     return axios.get(url, {headers:{token:token}})
     .then((result)=>{
         if(result.status===200){
@@ -39,7 +39,7 @@ export function ReadTodoByUserId(){
 }
 
 export function ReadTodoById(id){
-    const url=`http://localhost:5000/api/v1/ReadTodoById/${id}`;
+    const url=`https://rejaul-karim-todo.herokuapp.com/api/v1/ReadTodoById/${id}`;
     return axios.get(url, {headers:{token:token}})
     .then((result)=>{
         if(result.status===200){
@@ -50,7 +50,7 @@ export function ReadTodoById(id){
     })
 }
 export function DeleteTodo(id){
-    const url=`http://localhost:5000/api/v1/deleteTodo/${id}`;
+    const url=`https://rejaul-karim-todo.herokuapp.com/api/v1/deleteTodo/${id}`;
     return axios.get(url, {headers:{token:token}})
     .then((result)=>{
         if(result.status===200){
@@ -62,7 +62,7 @@ export function DeleteTodo(id){
 }
 
 export function UpdateTodo(id, todoName,todoDescription){
-    const url=`http://localhost:5000/api/v1/updateTodo/${id}`;
+    const url=`https://rejaul-karim-todo.herokuapp.com/api/v1/updateTodo/${id}`;
     const body={
         Title:todoName,
         Detail:todoDescription

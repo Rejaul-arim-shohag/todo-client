@@ -1,6 +1,6 @@
 const axios = require('axios')
 export function Create(UserName, Email, Password){
-    const url="http://localhost:5000/api/v1/createUser";
+    const url="https://rejaul-karim-todo.herokuapp.com/api/v1/createUser";
     const postBody = {
         UserName: UserName,
         Email: Email,
@@ -24,7 +24,7 @@ export const userLogin = (email, password)=>{
         Email: email,
         Password: password
     }
-    const url = "http://localhost:5000/api/v1/loginUser"
+    const url = "https://rejaul-karim-todo.herokuapp.com/api/v1/loginUser"
     return axios.post(url, postBody)
     .then((res)=>{
         if(res.status===200){
